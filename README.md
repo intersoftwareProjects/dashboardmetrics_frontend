@@ -1,8 +1,4 @@
-
 # dashboardmetrics_frontend
-
-
-
 
 ## Instalación
 
@@ -15,18 +11,19 @@
 ```bash
 git clone https://github.com/intersoftwareProjects/dashboardmetrics_frontend.git
 ```
-    
+
+```bash
+cd dashboardmetrics_frontend
+```
+
 3. Instalar dependencias
 
 ```bash
 npm install
 ```
-*(en la carpeta del proyecto)*
-
 
 4. Iniciar servidor Next
 
 ```bash
 npm run dev
 ```
-*(en la carpeta del proyecto)*
