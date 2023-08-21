@@ -1,6 +1,7 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "prettier"//Para que no tenga problemas con prettier, siempre debe estar al final
+    // eslint-config-prettier is a config that disables rules that conflict with Prettier.
+    "prettier"
   ]
 }
