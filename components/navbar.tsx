@@ -1,141 +1,87 @@
-import {
-	Button,
-	Kbd,
-	Link,
-	Input,
-	Navbar as NextUINavbar,
-	NavbarContent,
-	NavbarMenu,
-	NavbarMenuToggle,
-	NavbarBrand,
-	NavbarItem,
-	NavbarMenuItem,
-} from "@nextui-org/react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { motion } from "framer-motion";
+import { Logo_Alt } from "@/components/icons";
+import { getName, getToken } from "@/lib/utils/local_variables";
+import { Button } from "@nextui-org/react";
+import { User } from "@/lib/Interfaces/user.interface";
 
-import { link as linkStyles } from "@nextui-org/theme";
+export function Navbar() {
+  const [user, setUser] = useState<User>({ username: "" });
+  const [pageTitle, setPageTitle] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
 
-import { siteConfig } from "@/config/site";
-import NextLink from "next/link";
-import clsx from "clsx";
+  useEffect(() => {
+    const token = getToken();
+    if (!token) {
+      redirectToLogin();
+    }
+  });
 
-import { ThemeSwitch } from "@/components/theme-switch";
-import {
-	TwitterIcon,
-	GithubIcon,
-	DiscordIcon,
-	HeartFilledIcon,
-	SearchIcon,
-} from "@/components/icons";
+  useEffect(() => {
+    setPageTitle(getPageTitle(router.pathname));
+  }, [router.pathname]);
+  
+  useEffect(() => {
+    const name = getName();
 
-import { Logo } from "@/components/icons";
+    if(name) {
+      setUser({ username: name });
+    } else {
+      setUser({ username: "no se ha loguedo" });
+    }
 
-export const Navbar = () => {
-	const searchInput = (
-		<Input
-			aria-label="Search"
-			classNames={{
-				inputWrapper: "bg-default-100",
-				input: "text-sm",
-			}}
-			endContent={
-				<Kbd className="hidden lg:inline-block" keys={["command"]}>
-					K
-				</Kbd>
-			}
-			labelPlacement="outside"
-			placeholder="Search..."
-			startContent={
-				<SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
-			}
-			type="search"
-		/>
-	);
+  }, []);
 
-	return (
-		<NextUINavbar maxWidth="xl" position="sticky">
-			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-				<NavbarBrand className="gap-3 max-w-fit">
-					<NextLink className="flex justify-start items-center gap-1" href="/">
-						<Logo />
-						<p className="font-bold text-inherit">ACME</p>
-					</NextLink>
-				</NavbarBrand>
-				<div className="hidden lg:flex gap-4 justify-start ml-2">
-					{siteConfig.navItems.map((item) => (
-						<NavbarItem key={item.href}>
-							<NextLink
-								className={clsx(
-									linkStyles({ color: "foreground" }),
-									"data-[active=true]:text-primary data-[active=true]:font-medium"
-								)}
-								color="foreground"
-								href={item.href}
-							>
-								{item.label}
-							</NextLink>
-						</NavbarItem>
-					))}
-				</div>
-			</NavbarContent>
+  function redirectToLogin() {
+    router.push("/");
+  }
 
-      <NavbarContent className="hidden sm:flex basis-1/5 sm:basis-full" justify="end">
-				<NavbarItem className="hidden sm:flex gap-2">
-					<Link isExternal href={siteConfig.links.twitter}>
-						<TwitterIcon className="text-default-500" />
-					</Link>
-					<Link isExternal href={siteConfig.links.discord}>
-						<DiscordIcon className="text-default-500" />
-					</Link>
-					<Link isExternal href={siteConfig.links.github}>
-						<GithubIcon className="text-default-500" />
-					</Link>
-					<ThemeSwitch />
-				</NavbarItem>
-				<NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
-				<NavbarItem className="hidden md:flex">
-					<Button
-						isExternal
-						as={Link}
-						className="text-sm font-normal text-default-600 bg-default-100"
-						href={siteConfig.links.sponsor}
-						startContent={<HeartFilledIcon className="text-danger" />}
-						variant="flat"
-					>
-						Sponsor
-					</Button>
-				</NavbarItem>
-			</NavbarContent>
+  function getPageTitle(pathname: string) {
+    const pathParts = pathname.split("/");
+    const lastPathPart = pathParts[pathParts.length - 1];
+    return lastPathPart.charAt(0).toUpperCase() + lastPathPart.slice(1);
+  }
 
-			<NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
-        </Link>
-        <ThemeSwitch />
-				<NavbarMenuToggle />
-      </NavbarContent>
+  function toggleMenu() {
+    setMenuOpen(!menuOpen);
+  }
 
-      <NavbarMenu>
-				{searchInput}
-				<div className="mx-4 mt-2 flex flex-col gap-2">
-					{siteConfig.navMenuItems.map((item, index) => (
-						<NavbarMenuItem key={`${item}-${index}`}>
-							<Link
-								color={
-									index === 2
-										? "primary"
-										: index === siteConfig.navMenuItems.length - 1
-										? "danger"
-										: "foreground"
-								}
-								href="#"
-								size="lg"
-							>
-								{item.label}
-							</Link>
-						</NavbarMenuItem>
-					))}
-				</div>
-			</NavbarMenu>
-		</NextUINavbar>
-	);
-};
+  function handleLogout() {
+    // handle logout logic here
+  }
+
+  if(user.username) {
+    return (
+        <nav style={{ backgroundColor: "#1B1D36", color: "white", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 20px", maxHeight: "65px" }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <button style={{ backgroundColor: "transparent", border: "none", marginRight: "20px" }} onClick={toggleMenu}>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="white" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+              </svg>
+            </button>
+            <Logo_Alt />
+            <p style={{ marginLeft: "20px", fontSize: "22px" }}>|‎ ‎ ‎ ‎ {pageTitle}</p>
+          </div>
+          <p style={{fontSize: "20px"}}>{user.username}</p>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.5 }}
+              style={{ position: "absolute", top: "65px", left: "0", backgroundColor: "#1B1D36", padding: "10px", boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)", zIndex: 1, minHeight: "93.2vh" }}
+            >
+              <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+                <li><a href="#">Menu Item 1</a></li>
+                <li><a href="#">Menu Item 2</a></li>
+                <li><a href="#">Menu Item 3</a></li>
+                <li style={{ position: "absolute", bottom: "20px" }}><Button onClick={handleLogout} className="bg-[#1B1D36]">Salir</Button></li>
+              </ul>
+            </motion.div>
+          )}
+        </nav>
+    );
+  }
+}
