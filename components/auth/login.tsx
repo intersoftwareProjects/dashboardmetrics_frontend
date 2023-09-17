@@ -58,12 +58,12 @@ export function LoginForm() {
                         alt="Login Background"
                         width={5500}
                         height={3700}
-                        className="w-full h-full object-cover"
+                        className="h-full object-cover"
                         priority
                     />
                 </div>
                 <div
-                    className="min-w-[100%] h-full bg-[#EBE9E9] flex items-center justify-center relative lg:min-w-[50%]">
+                    className="min-w-[100%] h-full bg-[#EBE9E9] flex flex-col items-center justify-center relative lg:min-w-[50%] overflow-y-auto">
                     <div
                         className="w-1/2 rounded-2xl bg-[#1b1d36] flex flex-col items-center justify-center p-5 overflow-y-auto">
                         <h1 className={`${title({size: "sm", class: "mb-5"})} text-center`}>
@@ -103,11 +103,16 @@ export function LoginForm() {
                             </Button>
                         )}
 
+
+                    </div>
+
+                    <div className="flex-col relative top-[25%] mb-0 h-40">
                         <LogoIntersoftware
-                            className="absolute bottom-0 left-1/2 transform -translate-x-1/2 mb-0 h-40"
                             scale={0.6}
                         />
                     </div>
+
+
                 </div>
             </div>
         </DefaultLayout>
