@@ -24,6 +24,7 @@ export function LoginForm() {
   async function handleSubmit() {
     try {
       setIsLoading(true);
+      setErrorMessage("");
       // API call:
       const data = await loginUser(username, password);
       console.log("Data is :", data);
