@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { fontSans, fontMono } from "@/config/fonts";

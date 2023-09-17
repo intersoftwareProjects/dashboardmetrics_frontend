@@ -1,36 +1,6 @@
 import * as React from "react";
 import { IconSvgProps } from "@/types";
 
-export const Logo: React.FC<IconSvgProps> = ({
-  size = 130,
-  width,
-  height,
-  ...props
-}) => (
-  <img
-    src="/intersw.png"
-    alt="Intersw Logo"
-    height={size || height}
-    width={size || height}
-    {...props}
-  />
-);
-
-export const Logo_Alt: React.FC<IconSvgProps> = ({
-	size = 130,
-	width,
-	height,
-	...props
-  }) => (
-	<img
-	  src="/intersw_fondo_negro.png"
-	  alt="Intersw Logo"
-	  height={size || height}
-	  width={size || height}
-	  {...props}
-	/>
-  );
-
 export const DiscordIcon: React.FC<IconSvgProps> = ({
 	size = 24,
 	width,

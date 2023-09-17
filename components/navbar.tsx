@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-import { Logo_Alt } from "@/components/icons";
 import { getName, getToken } from "@/lib/utils/local_variables";
 import { Button } from "@nextui-org/react";
 import { User } from "@/lib/Interfaces/user.interface";
+import {LogoIntersoftwareWhite} from "@/components/images";
 
 export function Navbar() {
   const [user, setUser] = useState<User>({ username: "" });
@@ -61,7 +61,7 @@ export function Navbar() {
                 <path fill="white" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
               </svg>
             </button>
-            <Logo_Alt />
+            <LogoIntersoftwareWhite scale={0.5} />
             <p style={{ marginLeft: "20px", fontSize: "22px" }}>|‎ ‎ ‎ ‎ {pageTitle}</p>
           </div>
           <p style={{fontSize: "20px"}}>{user.username}</p>

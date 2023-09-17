@@ -1,4 +1,3 @@
-import "dotenv/config";
 import { title, subtitle } from "@/components/primitives";
 import { Button, Divider, Input } from "@nextui-org/react";
 import * as React from "react";
