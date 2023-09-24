@@ -1,4 +1,4 @@
-import { verifyJWT } from "./jwt.handler";
+import {verifyJWT} from "./jwt.handler";
 
 /**
  * * Remove stored token
@@ -32,7 +32,7 @@ export function getName(): string | undefined {
   const token = getToken();
   if(token) {
     const decoded = verifyJWT(token);
-    console.log(decoded);
+    // console.log(decoded);
     return decoded ? decoded.username : "";
   }
   return "";

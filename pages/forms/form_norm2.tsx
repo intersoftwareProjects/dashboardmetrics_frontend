@@ -5,7 +5,7 @@ import Head from "next/head";
 
 import DefaultLayout from "@/layouts/default";
 
-export default function DashboardPage() {
+export default function FormNormPage2() {
     // Watchers
     React.useEffect(() => {
         const token = window.localStorage.getItem("token") || window.sessionStorage.getItem("token");
@@ -21,7 +21,7 @@ export default function DashboardPage() {
     return (
         <DefaultLayout>
             <Head>
-                <title>Intersoftware | Dashboard</title>
+                <title>Intersoftware | Formularios</title>
             </Head>
             <SiteNavbar/>
 
@@ -31,25 +31,7 @@ export default function DashboardPage() {
                     margin: `calc(50vh - ${90}px) 0`,
                     fontSize: "50px",
                     color: "black"
-                }}>Bienvenido</p>
-                <p style={{
-                    textAlign: "center",
-                    margin: `calc(50vh - ${90}px) 0`,
-                    fontSize: "50px",
-                    color: "black"
-                }}>Bienvenido</p>
-                <p style={{
-                    textAlign: "center",
-                    margin: `calc(50vh - ${90}px) 0`,
-                    fontSize: "50px",
-                    color: "black"
-                }}>Bienvenido</p>
-                <p style={{
-                    textAlign: "center",
-                    margin: `calc(50vh - ${90}px) 0`,
-                    fontSize: "50px",
-                    color: "black"
-                }}>Bienvenido</p>
+                }}>Formulario Gente Normaln't</p>
             </div>
         </DefaultLayout>
     );
