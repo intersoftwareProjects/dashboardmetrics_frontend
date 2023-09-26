@@ -64,7 +64,7 @@ export default function FormNormPage() {
                     style={{ marginBottom: "5vh" }}
                     className="intersoftware bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded min-w-[350px]"
                 >
-                    Formulario Para Gente Normaln't
+                    Formulario Para Gente Normaln&apos;t
                 </Button>
                 <Button
                     startContent={<Gi3DGlasses size={32} />}

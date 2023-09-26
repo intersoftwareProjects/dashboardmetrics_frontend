@@ -31,7 +31,7 @@ export default function FormNormPage2() {
                     margin: `calc(50vh - ${90}px) 0`,
                     fontSize: "50px",
                     color: "black"
-                }}>Formulario Gente Normaln't</p>
+                }}>Formulario Gente Normaln&apos;t</p>
             </div>
         </DefaultLayout>
     );
