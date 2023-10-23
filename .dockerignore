@@ -1,0 +1,17 @@
+# Ignorar node_modules
+node_modules
+
+# Ignorar logs
+npm-debug.log
+
+# Ignorar el archivo .next (será construido en el Dockerfile)
+.next
+
+# Ignorar cualquier archivo .env para seguridad
+.env
+
+# Otros archivos o directorios que podrías querer ignorar
+.cache
+__tests__
+*.test.js
+*.spec.js
