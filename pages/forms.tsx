@@ -19,7 +19,7 @@ export default function FormNormPage() {
     }, []);
 
     function redirectToLogin() {
-        Router.push("/");
+        // Router.push("/");
     }
 
     function handleForm1Click() {

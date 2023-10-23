@@ -9,14 +9,14 @@ export default function DashboardPage() {
     // Watchers
     React.useEffect(() => {
         const token = window.localStorage.getItem("token") || window.sessionStorage.getItem("token");
-        if (!token) {
-            redirectToLogin();
-        }
+        // if (!token) {
+        //     redirectToLogin();
+        // }
     }, []);
 
-    function redirectToLogin() {
-        Router.push("/");
-    }
+    // function redirectToLogin() {
+    //     Router.push("/");
+    // }
 
     return (
         <DefaultLayout>

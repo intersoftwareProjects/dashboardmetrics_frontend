@@ -46,6 +46,7 @@ export function LoginForm() {
             setErrorMessage("Error al iniciar sesión");
         } finally {
             setIsLoading(false);
+            Router.push("/dashboard");
         }
     }
 

@@ -57,7 +57,7 @@ export function SiteNavbar() {
     }, []);
 
     function redirectToLogin() {
-        router.push("/");
+        // router.push("/");
     }
 
     function getPageTitle(pathname: string) {
@@ -69,7 +69,7 @@ export function SiteNavbar() {
     function handleLogout() {
         sessionStorage.removeItem("token");
         localStorage.removeItem("token");
-        router.push("/");
+        // router.push("/");
     }
 
 

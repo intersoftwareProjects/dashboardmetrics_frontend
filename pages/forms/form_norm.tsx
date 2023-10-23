@@ -15,7 +15,7 @@ export default function FormNormPage() {
     }, []);
 
     function redirectToLogin() {
-        Router.push("/");
+        // Router.push("/");
     }
 
     return (
