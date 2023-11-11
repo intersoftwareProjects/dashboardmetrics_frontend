@@ -422,7 +422,6 @@ export default function FormNormPage() {
                         <RadioGroup
                             label="12. ¿Cuál es el impacto percibido del trabajo remoto en el aumento de la productividad de la empresa?"
                             className="text-black"
-                            required
                         >
                             <Radio value="0_percent">0%</Radio>
                             <Radio value="1_to_5_percent">Entre el 1 y el 5%</Radio>
@@ -434,7 +433,6 @@ export default function FormNormPage() {
                     </div>
 
                     <div style={{minWidth: "25vh"}}>
-
                         <RadioGroup
                             label="13. Su empresa cuenta con paquetes de compensación variable (pago vinculado al desempeño de un colaborador que no hace parte del salario fijo)"
                             className="text-black"
