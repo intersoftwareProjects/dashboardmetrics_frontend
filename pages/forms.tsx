@@ -2,8 +2,8 @@ import * as React from "react";
 import Router from "next/router";
 import { SiteNavbar } from "@/components/common/site_navbar";
 import { Button } from "@nextui-org/react";
-import { BsFillPhoneFill } from "react-icons/bs";
-import { Gi3DGlasses, GiCow } from "react-icons/gi";
+import { BsFillPersonFill } from "react-icons/bs";
+import { BiWorld } from "react-icons/bi";
 
 import Head from "next/head";
 
@@ -23,15 +23,11 @@ export default function FormNormPage() {
     }
 
     function handleForm1Click() {
-        Router.push("/forms/form_norm");
+        Router.push("/forms/internacionalizacion");
     }
 
     function handleForm2Click() {
-        Router.push("/forms/form_norm2");
-    }
-
-    function handleForm3Click() {
-        Router.push("/forms/form_norm3");
+        Router.push("/forms/talento_humano");
     }
 
     return (
@@ -49,31 +45,33 @@ export default function FormNormPage() {
                 }}
             >
                 <Button
-                    startContent={<BsFillPhoneFill size={32} />}
+                    startContent={<BsFillPersonFill size={32} />}
                     onClick={handleForm1Click}
                     size="lg"
-                    style={{ marginBottom: "5vh" }}
+                    style={{ marginBottom: "5vh", display: "flex", justifyContent: "space-between", alignItems: "center" }}
                     className="intersoftware bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded min-w-[350px]"
                 >
-                    Formulario Para Gente Normal
+                    <div style={{ borderRight: "1px solid white", height: "70%", marginLeft: "5px"}}></div>
+                    <span style={{ textAlign: "center", flex: "1" }}>Encuesta de Talento Humano</span>
                 </Button>
                 <Button
-                    startContent={<GiCow size={32} />}
+                    startContent={<BiWorld size={32} />}
                     onClick={handleForm2Click}
                     size="lg"
-                    style={{ marginBottom: "5vh" }}
+                    style={{ marginBottom: "5vh", display: "flex", justifyContent: "space-between", alignItems: "center" }}
                     className="intersoftware bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded min-w-[350px]"
                 >
-                    Formulario Para Gente Normaln&apos;t
+                    <div style={{ borderRight: "1px solid white", height: "70%", marginLeft: "5px"}}></div>
+                    <span style={{ textAlign: "center", flex: "1" }}>Internacionalización Empresas</span>
                 </Button>
-                <Button
+                {/* <Button
                     startContent={<Gi3DGlasses size={32} />}
                     onClick={handleForm3Click}
                     size="lg"
                     className="intersoftware bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded min-w-[350px]"
                 >
                     Formulario Para Gente Rarita
-                </Button>
+                </Button> */}
             </div>
 
 

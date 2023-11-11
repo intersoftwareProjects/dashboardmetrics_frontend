@@ -5,7 +5,7 @@ import Head from "next/head";
 
 import DefaultLayout from "@/layouts/default";
 
-export default function FormNormPage3() {
+export default function FormNormPage() {
     // Watchers
     React.useEffect(() => {
         const token = window.localStorage.getItem("token") || window.sessionStorage.getItem("token");
@@ -20,10 +20,10 @@ export default function FormNormPage3() {
 
     return (
         <DefaultLayout>
-            <SiteNavbar/>
             <Head>
                 <title>Intersoftware | Formularios</title>
             </Head>
+            <SiteNavbar/>
 
             <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
                 <p style={{
@@ -31,8 +31,12 @@ export default function FormNormPage3() {
                     margin: `calc(50vh - ${90}px) 0`,
                     fontSize: "50px",
                     color: "black"
-                }}>Formulario Gente Rarita</p>
+                }}>Formulario Gente Normal</p>
             </div>
+
+
+            
+
         </DefaultLayout>
     );
 }
