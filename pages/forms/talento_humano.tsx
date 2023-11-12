@@ -3,8 +3,9 @@ import {useState} from "react";
 import Router from "next/router";
 import {SiteNavbar} from "@/components/common/site_navbar";
 import Head from "next/head";
-import {Button, Input, Radio, RadioGroup, Select, SelectItem} from "@nextui-org/react";
+import {BreadcrumbItem, Breadcrumbs, Button, Input, Radio, RadioGroup, Select, SelectItem} from "@nextui-org/react";
 import DefaultLayout from "@/layouts/default";
+import {title} from "@/components/primitives";
 
 const perfiles = [
     { label: "Desarrollo de Software a la Medida", value: "custom_software_development" },
@@ -112,8 +113,7 @@ const departureReasons = [
 ];
 
 
-
-export default function FormNormPage() {
+export default function FormTalentoHumano() {
     const [selectedProfiles, setSelectedProfiles] = useState([]);
     const [selectedCities, setSelectedCities] = useState([]);
     const [selectedCountries, setSelectedCountries] = useState([]);
@@ -192,6 +192,14 @@ export default function FormNormPage() {
             </Head>
             <SiteNavbar />
 
+            <div className="light text-black" style={{padding: "20px"}}>
+                <Breadcrumbs>
+                    <BreadcrumbItem href="/forms">Formularios</BreadcrumbItem>
+                    <BreadcrumbItem href="/forms/talento_humano">Encuesta Talento Humano</BreadcrumbItem>
+                </Breadcrumbs>
+            </div>
+
+
             <div className="light text-black" style={{
                 display: "flex",
                 flexDirection: "column",
@@ -207,6 +215,18 @@ export default function FormNormPage() {
                     minWidth: "30vh",
                     maxWidth: "80vh"
                 }}>
+
+                    <h1 style={{gridColumn: "span 2"}} className={`${title({size: "sm"})} text-center`}>
+                        Encuesta de Talento Humano
+                    </h1>
+                    <p className="text-black" style={{gridColumn: "span 2", marginBottom: "20px"}}>
+                        Con el fin de articular las estrategias internas de la corporación y obtener el mayor valor para
+                        nuestras empresas corporadas en cada una de las actividades que realizamos, agradecemos su apoyo
+                        para diligenciar este formulario que nos brindará los insumos necesarios para una buena gestión
+                        de la información de la red.
+                    </p>
+
+
                     {/* PREGUNTA 1 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                         <Input isRequired labelPlacement="outside" label="1. Nombre de la Empresa"
@@ -366,7 +386,7 @@ export default function FormNormPage() {
                                             defaultValue="0-25%"
                                             // State and event handlers should be managed here
                                         >
-                                            {['0-25%', '26-50%', '51-75%', '76-100%'].map((value) => (
+                                            {['0 - 25%', '26 - 50%', '51 - 75%', '76 - 100%'].map((value) => (
                                                 <Radio key={value} value={value}>
                                                     {value}
                                                 </Radio>

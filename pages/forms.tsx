@@ -9,7 +9,7 @@ import Head from "next/head";
 
 import DefaultLayout from "@/layouts/default";
 
-export default function FormNormPage() {
+export default function FormMainPage() {
     // Watchers
     React.useEffect(() => {
         const token = window.localStorage.getItem("token") || window.sessionStorage.getItem("token");
@@ -46,7 +46,7 @@ export default function FormNormPage() {
             >
                 <Button
                     startContent={<BsFillPersonFill size={32} />}
-                    onClick={handleForm1Click}
+                    onClick={handleForm2Click}
                     size="lg"
                     style={{ marginBottom: "5vh", display: "flex", justifyContent: "space-between", alignItems: "center" }}
                     className="intersoftware bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded min-w-[350px]"
@@ -56,7 +56,7 @@ export default function FormNormPage() {
                 </Button>
                 <Button
                     startContent={<BiWorld size={32} />}
-                    onClick={handleForm2Click}
+                    onClick={handleForm1Click}
                     size="lg"
                     style={{ marginBottom: "5vh", display: "flex", justifyContent: "space-between", alignItems: "center" }}
                     className="intersoftware bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded min-w-[350px]"
