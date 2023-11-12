@@ -62,7 +62,7 @@ export default function FormMainPage() {
                     className="intersoftware bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded min-w-[350px]"
                 >
                     <div style={{ borderRight: "1px solid white", height: "70%", marginLeft: "5px"}}></div>
-                    <span style={{ textAlign: "center", flex: "1" }}>Internacionalización Empresas</span>
+                    <span style={{ textAlign: "center", flex: "1" }}>Encuesta de Internacionalización</span>
                 </Button>
                 {/* <Button
                     startContent={<Gi3DGlasses size={32} />}

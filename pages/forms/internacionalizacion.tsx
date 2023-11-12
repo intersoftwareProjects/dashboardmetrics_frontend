@@ -78,7 +78,7 @@ export default function FormInternacionalizacion() {
             <div className="light text-black" style={{padding: "20px"}}>
                 <Breadcrumbs>
                     <BreadcrumbItem href="/forms">Formularios</BreadcrumbItem>
-                    <BreadcrumbItem href="/forms/talento_humano">Encuesta Talento Humano</BreadcrumbItem>
+                    <BreadcrumbItem href="/forms/internacionalizacion">Encuesta Internacionalización</BreadcrumbItem>
                 </Breadcrumbs>
             </div>
 
