@@ -127,42 +127,50 @@ export default function FormNormPage() {
     const handleProfilesSelectionChange = (selectedProfiles: any) => {
         setSelectedProfiles(selectedProfiles);
     }
+    // @ts-ignore
     const isOtherProfilesSelected = Array.from(selectedProfiles).includes("other");
 
     const handleCitiesSelectionChange = (selectedCities: any) => {
         setSelectedCities(selectedCities);
     }
+    // @ts-ignore
     const isOtherCitiesSelected = Array.from(selectedCities).includes("other");
 
     const handleCountriesSelectionChange = (selectedCountries: any) => {
         setSelectedCountries(selectedCountries);
     }
+    // @ts-ignore
     const isOtherCountriesSelected = Array.from(selectedCountries).includes("other");
 
     const handleWorkModalitiesSelectionChange = (selectedWorkModalities: any) => {
         setSelectedWorkModalities(selectedWorkModalities);
     }
+    // @ts-ignore
     const isOtherWorkModalitiesSelected = Array.from(selectedWorkModalities).includes("other");
 
     const handleProductivitySelectionChange = (selectedProductivity: any) => {
         setSelectedProductivity(selectedProductivity);
         console.log(selectedProductivity)
     }
+    // @ts-ignore
     const isOtherProductivitySelected = Array.from(selectedProductivity).includes("other");
 
     const handleBonusTypesSelectionChange = (selectedBonusTypes: any) => {
         setSelectedBonusTypes(selectedBonusTypes);
     }
+    // @ts-ignore
     const isOtherBonusTypesSelected = Array.from(selectedBonusTypes).includes("other");
 
     const handleEmployeeBenefitsSelectionChange = (selectedEmployeeBenefits: any) => {
         setSelectedEmployeeBenefits(selectedEmployeeBenefits);
     }
+    // @ts-ignore
     const isOtherEmployeeBenefitsSelected = Array.from(selectedEmployeeBenefits).includes("other");
 
     const handleDepartureReasonsSelectionChange = (selectedDepartureReasons: any) => {
         setSelectedDepartureReasons(selectedDepartureReasons);
     }
+    // @ts-ignore
     const isOtherDepartureReasonsSelected = Array.from(selectedDepartureReasons).includes("other");
 
     // Watchers
@@ -199,24 +207,37 @@ export default function FormNormPage() {
                     minWidth: "30vh",
                     maxWidth: "80vh"
                 }}>
+                    {/* PREGUNTA 1 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
-                        <Input isRequired label="1. Nombre de la Empresa" placeholder="Escriba su respuesta" />
+                        <Input isRequired labelPlacement="outside" label="1. Nombre de la Empresa"
+                               placeholder="Escriba su respuesta"/>
                     </div>
 
+                    {/* PREGUNTA 2*/}
                     <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
-                        <Input isRequired label="2. Nombre de quien completa la encuesta" placeholder="Escriba su respuesta" />
+                        <Input isRequired labelPlacement="outside" label="2. Nombre de quien completa la encuesta"
+                               placeholder="Escriba su respuesta"/>
                     </div>
 
+                    {/* PREGUNTA 3 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
-                        <Input isRequired label="3. Cargo" placeholder="Escriba su respuesta" />
+                        <Input isRequired labelPlacement="outside" label="3. Cargo" placeholder="Escriba su respuesta"/>
                     </div>
 
+                    {/* PREGUNTA 4 */}
+                    <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
+                        <Input isRequired labelPlacement="outside" label="4. Correo electrónico"
+                               placeholder="Escriba su respuesta"/>
+                    </div>
+
+                    {/* PREGUNTA 5 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                         <Select
                             label="5. Perfil de la empresa"
                             placeholder="Selecciona una o mas de una"
                             selectionMode="multiple"
                             required
+                            labelPlacement="outside"
                             selectedKeys={selectedProfiles} // Here we use the state
                             onSelectionChange={handleProfilesSelectionChange} // Here we use the handler
                         >
@@ -231,8 +252,6 @@ export default function FormNormPage() {
 
                             <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                                 <Input
-                                    clearable
-                                    bordered
                                     label="5.1 Otro"
                                     placeholder="Especifique aquí"
                                     disabled={!isOtherProfilesSelected}
@@ -241,11 +260,13 @@ export default function FormNormPage() {
                         )}
                     </div>
 
+                    {/* PREGUNTA 6 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                         <Select
                             label="6. Ciudades en las que tiene sede en Colombia"
                             placeholder="Selecciona una o mas de una"
                             selectionMode="multiple"
+                            labelPlacement="outside"
                             selectedKeys={selectedCities} // Here we use the state
                             onSelectionChange={handleCitiesSelectionChange} // Here we use the handler
                         >
@@ -260,8 +281,6 @@ export default function FormNormPage() {
 
                             <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                                 <Input
-                                    clearable
-                                    bordered
                                     label="6.1 Otro"
                                     placeholder="Especifique aquí"
                                     disabled={!isOtherCitiesSelected}
@@ -270,11 +289,13 @@ export default function FormNormPage() {
                         )}
                     </div>
 
+                    {/* PREGUNTA 7 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                         <Select
                             label="7. Países en los que tiene personal contratado"
                             placeholder="Selecciona una o mas de una"
                             selectionMode="multiple"
+                            labelPlacement="outside"
                             required
                             selectedKeys={selectedCountries} // Here we use the state
                             onSelectionChange={handleCountriesSelectionChange} // Here we use the handler
@@ -290,8 +311,6 @@ export default function FormNormPage() {
 
                             <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                                 <Input
-                                    clearable
-                                    bordered
                                     label="7.1 Otro"
                                     placeholder="Especifique aquí"
                                     disabled={!isOtherCountriesSelected}
@@ -300,10 +319,13 @@ export default function FormNormPage() {
                         )}
                     </div>
 
+                    {/* PREGUNTA 8 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
-                        <Input isRequired label="8. Número total de empleados contratados" placeholder="Escriba su respuesta" />
+                        <Input labelPlacement="outside" isRequired label="8. Número total de empleados contratados"
+                               placeholder="Escriba su respuesta"/>
                     </div>
 
+                    {/* PREGUNTA 9 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
 
                         <p>
@@ -345,7 +367,7 @@ export default function FormNormPage() {
                                             // State and event handlers should be managed here
                                         >
                                             {['0-25%', '26-50%', '51-75%', '76-100%'].map((value) => (
-                                                <Radio key={value} value={value} css={{margin: 1}}>
+                                                <Radio key={value} value={value}>
                                                     {value}
                                                 </Radio>
                                             ))}
@@ -357,12 +379,14 @@ export default function FormNormPage() {
 
                     </div>
 
+                    {/* PREGUNTA 10 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                         <Select
                             label="10. Que tipo de modalidad de trabajo aplica actualmente"
                             placeholder="Selecciona una o mas de una"
                             selectionMode="multiple"
                             required
+                            labelPlacement="outside"
                             selectedKeys={selectedWorkModalities} // Here we use the state
                             onSelectionChange={handleWorkModalitiesSelectionChange} // Here we use the handler
                         >
@@ -377,8 +401,6 @@ export default function FormNormPage() {
 
                             <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                                 <Input
-                                    clearable
-                                    bordered
                                     label="10.1 Otro"
                                     placeholder="Especifique aquí"
                                     disabled={!isOtherWorkModalitiesSelected}
@@ -387,11 +409,13 @@ export default function FormNormPage() {
                         )}
                     </div>
 
+                    {/* PREGUNTA 11 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                         <Select
                             label="11. El trabajo remoto a aumentado la productividad de sus colaboradores"
                             placeholder="Selecciona una"
                             selectionMode="single"
+                            labelPlacement="outside"
                             required
                             selectedKeys={selectedProductivity} // Here we use the state
                             onSelectionChange={handleProductivitySelectionChange} // Here we use the handler
@@ -407,8 +431,6 @@ export default function FormNormPage() {
 
                             <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                                 <Input
-                                    clearable
-                                    bordered
                                     label="11.1 Otro"
                                     placeholder="Especifique aquí"
                                     disabled={!isOtherProductivitySelected}
@@ -417,11 +439,13 @@ export default function FormNormPage() {
                         )}
                     </div>
 
+                    {/* PREGUNTA 12 */}
                     <div style={{minWidth: "25vh"}}>
 
                         <RadioGroup
                             label="12. ¿Cuál es el impacto percibido del trabajo remoto en el aumento de la productividad de la empresa?"
                             className="text-black"
+
                         >
                             <Radio value="0_percent">0%</Radio>
                             <Radio value="1_to_5_percent">Entre el 1 y el 5%</Radio>
@@ -432,23 +456,24 @@ export default function FormNormPage() {
                         </RadioGroup>
                     </div>
 
+                    {/* PREGUNTA 13 */}
                     <div style={{minWidth: "25vh"}}>
                         <RadioGroup
                             label="13. Su empresa cuenta con paquetes de compensación variable (pago vinculado al desempeño de un colaborador que no hace parte del salario fijo)"
                             className="text-black"
-                            required
                         >
                             <Radio value="yes">Si</Radio>
                             <Radio value="No">No</Radio>
                         </RadioGroup>
                     </div>
 
+                    {/* PREGUNTA 14 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                         <Select
                             label="14. Si su respuesta anterior es SI, ¿cuál de estos tipos de compensación variable utiliza con sus colaboradores?"
                             placeholder="Selecciona una o mas de una"
                             selectionMode="multiple"
-                            required
+                            labelPlacement="outside"
                             selectedKeys={selectedBonusTypes} // Here we use the state
                             onSelectionChange={handleBonusTypesSelectionChange} // Here we use the handler
                         >
@@ -463,8 +488,6 @@ export default function FormNormPage() {
 
                             <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                                 <Input
-                                    clearable
-                                    bordered
                                     label="14.1 Otro"
                                     placeholder="Especifique aquí"
                                     disabled={!isOtherBonusTypesSelected}
@@ -473,10 +496,12 @@ export default function FormNormPage() {
                         )}
                     </div>
 
+                    {/* PREGUNTA 15 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                         <Select
                             label="15. ¿Cuales de estos beneficios tiene su empresa para retener talento?"
                             placeholder="Selecciona una o mas de una"
+                            labelPlacement="outside"
                             selectionMode="multiple"
                             required
                             selectedKeys={selectedEmployeeBenefits} // Here we use the state
@@ -493,8 +518,6 @@ export default function FormNormPage() {
 
                             <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                                 <Input
-                                    clearable
-                                    bordered
                                     label="14.1 Otro"
                                     placeholder="Especifique aquí"
                                     disabled={!isOtherEmployeeBenefitsSelected}
@@ -503,22 +526,26 @@ export default function FormNormPage() {
                         )}
                     </div>
 
+                    {/* PREGUNTA 16 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2", marginTop: "20px"}}>
                         <Input isRequired labelPlacement="outside"
                                label="16. Índice de rotación general de la empresa primer semestre 2023 (Índice de rotación anual % = [ Cantidad de empleados que se fueron / (Cantidad inicial de empleados + Cantidad final de empleados) /2 ] X 100)"
                                placeholder="Escriba su respuesta"/>
                     </div>
 
+                    {/* PREGUNTA 17 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2", marginTop: "20px"}}>
                         <Input isRequired labelPlacement="outside"
                                label="17. Índice de rotación personal TI (Índice de rotación anual % = [ Cantidad de empleados que se fueron / (Cantidad inicial de empleados + Cantidad final de empleados) /2 ] X 100)"
                                placeholder="Escriba su respuesta"/>
                     </div>
 
+                    {/* PREGUNTA 18 */}
                     <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                         <Select
                             label="18. Principales razones de la rotación del personal en el primer semestre del 2023"
                             placeholder="Selecciona una o mas de una"
+                            labelPlacement="outside"
                             selectionMode="multiple"
                             required
                             selectedKeys={selectedDepartureReasons} // Here we use the state
@@ -535,8 +562,6 @@ export default function FormNormPage() {
 
                             <div style={{minWidth: "25vh", gridColumn: "span 2"}}>
                                 <Input
-                                    clearable
-                                    bordered
                                     label="18.1 Otro"
                                     placeholder="Especifique aquí"
                                     disabled={!isOtherDepartureReasonsSelected}
@@ -546,6 +571,8 @@ export default function FormNormPage() {
                     </div>
 
                 </div>
+
+                {/* BOTON ENVIAR */}
                 <div style={{display: "flex", justifyContent: "center", padding: "40px"}}>
                     <Button color="primary" variant="shadow">
                         Enviar Formulario
